@@ -41,6 +41,8 @@ Run nodemon in terminal.
 
 ### Deployed link:
 
+https://mighty-sands-43871.herokuapp.com/
+
 ## Screenshot
 
 The following images show the web application's appearance and functionality:
