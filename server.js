@@ -31,4 +31,15 @@ app.post("/api/notes", (req, res) => {
   res.json(noteArray);
 });
 
+app.delete("/api/notes/:id", (req, res) => {
+  let noteArray = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+
+  noteArray = noteArray.filter((selected) => {
+    return selected.id != req.params.id.toString();
+  });
+
+  fs.writeFileSync("./db/db.json", JSON.stringify(noteArray));
+  res.json(noteArray);
+});
+
 app.listen(PORT, () => console.log("Server listening on port " + PORT));
